@@ -59,7 +59,7 @@ function logOut(){
             timer: 1000,
           }).then(() => {
             firebase.auth().signOut().then(() => {
-                window.location.href = "login.html";
+                window.location.href = "index.html";
                 localStorage.removeItem("mail");
               }).catch((error) => {
                     console.error(error)
@@ -250,11 +250,11 @@ function rejectRecord(key) {
 function checkAuthentication() {
     firebase.auth().onAuthStateChanged((user) => {
         if (!user) {
-            window.location.href = "login.html"
+            window.location.href = "index.html"
         }else{
             // console.log("Authentication");
             if(user.email != "admin@jntucek.ac.in"){
-              window.location.href = "login.html";
+              window.location.href = "index.html";
             }
           }
       });
