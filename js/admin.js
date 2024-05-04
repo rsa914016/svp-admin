@@ -89,6 +89,7 @@ function gotData1(data) {
                             <th>Roll No</th>
                             <th>Name</th>
                             <th>Branch</th>
+                            <th>Company</th>
                             <th>Graduation Year</th>
                             <th>Actions</th>
                             </tr>
@@ -106,6 +107,7 @@ function gotData1(data) {
                         <td>${record.roll_no}</td>
                         <td style="text-align: left">${record.name}</td>
                         <td>${record.branch}</td>
+                        <td>${record.company_name}</td>
                         <td>${record.g_year}</td>
                         <td style="display:flex;gap:10px">
                             <button style="font-size:15px" title="View" class=" btn btn-primary" onclick="viewRecord('${record.link}')">View</i></button>
@@ -122,6 +124,7 @@ function gotData1(data) {
                     <td>${record.roll_no}</td>
                     <td style="text-align: left">${record.name}</td>
                     <td>${record.branch}</td>
+                    <td>${record.company_name}</td>
                     <td>${record.g_year}</td>
                     <td style="display:flex;gap:10px">
                         <button style="font-size:15px" title="View" class=" btn btn-primary" onclick="viewRecord('${record.link}')">View</i></button>
@@ -144,6 +147,7 @@ function gotData2(data) {
                             <th>Roll No</th>
                             <th>Name</th>
                             <th>Branch</th>
+                            <th>Company</th>
                             <th>Graduation Year</th>
                             <th>Status</th>
                             </tr>
@@ -163,6 +167,7 @@ function gotData2(data) {
                         <td>${record.roll_no}</td>
                         <td style="text-align: left">${record.name}</td>
                         <td>${record.branch}</td>
+                        <td>${record.company_name}</td>
                         <td>${record.g_year}</td>
                         <td style="color:${c_dict[record.status]}">${s_dict[record.status]}</td>
                     `;
@@ -175,6 +180,7 @@ function gotData2(data) {
                     <td>${record.roll_no}</td>
                     <td style="text-align: left">${record.name}</td>
                     <td>${record.branch}</td>
+                    <td>${record.company_name}</td>
                     <td>${record.g_year}</td>
                     <td style="color:${c_dict[record.status]}">${s_dict[record.status]}</td>
                 `;
