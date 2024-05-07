@@ -10,6 +10,7 @@ const firebaseConfig = {
   
   // initialize firebase
 firebase.initializeApp(firebaseConfig);
+var storage = firebase.storage();
 const database = firebase.database();
 // Reference to your Firebase database
 const ref = database.ref('Users');
@@ -130,7 +131,7 @@ function gotData1(data) {
                     <td>${record.g_year}</td>
                     <td>${record.dateTime}</td>
                     <td style="display:flex;gap:10px">
-                        <button style="font-size:15px" title="View" class=" btn btn-primary" onclick="viewRecord('${record.link}')">View</i></button>
+                        <button style="font-size:15px" title="View" class=" btn btn-primary" onclick="viewRecord('${record.roll_no}')">View</i></button>
                         <button style="font-size:15px" title="Accept" class=" btn btn-success" onclick="acceptRecord('${key}')">Accept</i></button>
                         <button style="font-size:15px" title="Reject" class=" btn btn-danger" onclick="rejectRecord('${key}')">Reject</button>
                     </td>
@@ -201,10 +202,15 @@ function errData(err) {
 }
 
 
-function viewRecord(key) {
-    window.open(key, '_blank');
-    console.log('Editing record with key:', key);
+function viewRecord(fileName) {
+  var storageRef = storage.ref('/pdfs/' + fileName);
+  storageRef.getDownloadURL().then(function(url) {
+    window.open(url, '_blank');
+  }).catch(function(error) {
+    console.error("Error getting download URL:", error);
+  });
 }
+
 
 function acceptRecord(key) {
     Swal.fire({
