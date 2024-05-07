@@ -91,6 +91,7 @@ function gotData1(data) {
                             <th>Branch</th>
                             <th>Company</th>
                             <th>Graduation Year</th>
+                            <th>Applied Date</th>
                             <th>Actions</th>
                             </tr>
                           `; // Clear previous data
@@ -109,6 +110,7 @@ function gotData1(data) {
                         <td>${record.branch}</td>
                         <td>${record.company_name}</td>
                         <td>${record.g_year}</td>
+                        <td>${record.dateTime}</td>
                         <td style="display:flex;gap:10px">
                             <button style="font-size:15px" title="View" class=" btn btn-primary" onclick="viewRecord('${record.link}')">View</i></button>
                             <button style="font-size:15px" title="Accept" class=" btn btn-success" onclick="acceptRecord('${key}')">Accept</i></button>
@@ -126,6 +128,7 @@ function gotData1(data) {
                     <td>${record.branch}</td>
                     <td>${record.company_name}</td>
                     <td>${record.g_year}</td>
+                    <td>${record.dateTime}</td>
                     <td style="display:flex;gap:10px">
                         <button style="font-size:15px" title="View" class=" btn btn-primary" onclick="viewRecord('${record.link}')">View</i></button>
                         <button style="font-size:15px" title="Accept" class=" btn btn-success" onclick="acceptRecord('${key}')">Accept</i></button>
@@ -149,6 +152,7 @@ function gotData2(data) {
                             <th>Branch</th>
                             <th>Company</th>
                             <th>Graduation Year</th>
+                            <th>Applied Date</th>
                             <th>Status</th>
                             </tr>
                           `; // Clear previous data
@@ -169,6 +173,7 @@ function gotData2(data) {
                         <td>${record.branch}</td>
                         <td>${record.company_name}</td>
                         <td>${record.g_year}</td>
+                        <td>${record.dateTime}</td>
                         <td style="color:${c_dict[record.status]}">${s_dict[record.status]}</td>
                     `;
                     tableBody.appendChild(row);
@@ -182,6 +187,7 @@ function gotData2(data) {
                     <td>${record.branch}</td>
                     <td>${record.company_name}</td>
                     <td>${record.g_year}</td>
+                    <td>${record.dateTime}</td>
                     <td style="color:${c_dict[record.status]}">${s_dict[record.status]}</td>
                 `;
                 tableBody.appendChild(row);
